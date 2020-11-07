@@ -22,7 +22,7 @@ if is_development_build():
 sys.path.append(os.path.abspath('./demo/'))
 
 import sphinx_rtd_theme
-from sphinx.locale import _
+from sphinx.locale import _config.yml
 
 project = u'Read the Docs Sphinx Theme'
 slug = re.sub(r'\W+', '-', project.lower())
@@ -33,12 +33,15 @@ copyright = author
 language = 'en'
 
 extensions = [
+[
+    ...
+    "sphinx_rtd_theme",
     'sphinx.ext.intersphinx',
     'sphinx.ext.autodoc',
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
     'sphinxcontrib.httpdomain',
-    'sphinx_rtd_theme',
+    'sphinx'
 ]
 
 templates_path = ['_templates']
